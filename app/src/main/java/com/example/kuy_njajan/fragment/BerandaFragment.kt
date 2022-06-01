@@ -1,16 +1,22 @@
 package com.example.kuy_njajan.fragment
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.kuy_njajan.R
+import com.example.kuy_njajan.adapter.AdapterDagangan
+import com.example.kuy_njajan.data.ApiConfig
+import com.example.kuy_njajan.model.DaganganKotlin
+import com.example.kuy_njajan.model.ResponseModel
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
@@ -18,43 +24,76 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class BerandaFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    //    lateinit var rvKlaris: RecyclerView
+    lateinit var rvKbaru: RecyclerView
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+
+        val view: View = inflater.inflate(R.layout.fragment_beranda, container, false)
+//        init(view)
+//        getDagangan()
+//        tampilData()
+        rvKbaru = view.findViewById(R.id.rv_kulinerbaru)
+
+        val layoutManager = LinearLayoutManager(activity)
+        layoutManager.orientation = LinearLayoutManager.HORIZONTAL
+
+        rvKbaru.adapter = AdapterDagangan(arrDagangan)
+        rvKbaru.layoutManager = layoutManager
+        return view
+
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_beranda, container, false)
-    }
+    val arrDagangan: ArrayList<DaganganKotlin>get(){
+        val arr= ArrayList<DaganganKotlin>()
+        val d1= DaganganKotlin()
+        d1.nama_dagangan = "Combro"
+        d1.khas_dagangan ="Bandung-Jawa Barat"
+        d1.harga_dagangan ="Rp. 10.000"
+        d1.foto_dagangan = R.drawable.combro
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment BerandaFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            BerandaFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+        val d2= DaganganKotlin()
+        d2.nama_dagangan = "Putri Ayu"
+        d2.khas_dagangan ="Bandung-Jawa Barat"
+        d2.harga_dagangan ="Rp. 10.000"
+        d2.foto_dagangan = R.drawable.putriayu
+
+        arr.add(d1)
+        arr.add(d2)
+
+
+        return arr
     }
+//    fun tampilData(){
+//
+//        val layoutManager = LinearLayoutManager(activity)
+//        layoutManager.orientation = LinearLayoutManager.HORIZONTAL
+//
+//        val layoutManager2 = LinearLayoutManager(activity)
+//        layoutManager2.orientation = LinearLayoutManager.HORIZONTAL
+//
+////        rvKlaris.adapter = AdapterProduk(requireActivity(), listProduk)
+////        rvKlaris.layoutManager = layoutManager
+////
+////        rvKbaru.adapter = AdapterProduk(requireActivity(), listProduk)
+////        rvKbaru.layoutManager = layoutManager2
+//
+//    }
+//
+//    fun getDagangan() {
+//        ApiConfig.instanceRetrofit.getdagangan().enqueue(object : Callback<ResponseModel> {
+//            override fun onFailure(call: Call<ResponseModel>, t: Throwable) {
+//            }
+//
+//            override fun onResponse(call: Call<ResponseModel>, response: Response<ResponseModel>) {
+//                val res = response.body()!!
+//
+//            }
+//        })
+//    }
+//
+//    fun init(view: View) {
+//        rvKlaris = view.findViewById(R.id.rv_kulinerlaris)
+//        rvKbaru = view.findViewById(R.id.rv_kulinerbaru)
+//    }
 }

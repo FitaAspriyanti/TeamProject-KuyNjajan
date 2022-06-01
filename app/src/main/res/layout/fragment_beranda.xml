@@ -47,13 +47,13 @@
         </androidx.cardview.widget.CardView>
 
         <ImageView
-            android:layout_centerVertical="true"
             android:id="@+id/icn_chat"
-            android:layout_alignParentRight="true"
-            android:layout_marginLeft="5dp"
             android:layout_width="35dp"
             android:layout_height="35dp"
-            app:srcCompat="@drawable/ic_baseline_local_grocery_store_24"/>
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            app:srcCompat="@drawable/ic_baseline_local_grocery_store_24" />
     </RelativeLayout>
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -65,14 +65,14 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="155dp"
-        android:layout_marginLeft="12dp"
-        android:layout_marginRight="12dp"
-        android:layout_marginTop="17dp"
-        app:cardCornerRadius="20dp"
-        android:background="@color/aksen"/>
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="155dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:layout_marginTop="17dp"
+                app:cardCornerRadius="20dp"
+                android:background="@color/aksen"/>
 
             <LinearLayout
                 android:background="@color/white"

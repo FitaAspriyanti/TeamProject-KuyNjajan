@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Kuy_Njajan</string>
+    <string name="app_name">APK Kuy_Njajan</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="title_beranda">Beranda</string>
     <string name="title_wistlist">Wist List</string>
@@ -7,11 +7,13 @@
     <string name="logo">Logo Kuy Njajan</string>
     <string name="nama">Nama Lengkap</string>
     <string name="username">Nama Akun</string>
-    <string name="tlp">No Telepon</string>
+    <string name="email">email </string>
+    <string name="No_telp">No Telepon</string>
     <string name="password">Password</string>
     <string name="btn_daftar">Daftar</string>
     <string name="btn_masuk">Masuk</string>
     <string name="txt_daftar">Belum punya akun? Daftar Akun</string>
+    <string name="txt_login">Sudah punya akun? Masuk Akun</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
