@@ -39,8 +39,8 @@ class Register_Activity : AppCompatActivity() {
             nama.requestFocus()
             return
         } else if (username.text.isEmpty()) {
-           username.error = "Nama Akun tidak boleh kosong"
-           username.requestFocus()
+            username.error = "Nama Akun tidak boleh kosong"
+            username.requestFocus()
             return
         }else if (jenkel.text.isEmpty()) {
             jenkel.error = "Nama Akun tidak boleh kosong"
@@ -56,13 +56,13 @@ class Register_Activity : AppCompatActivity() {
             notelp.requestFocus()
             return
         }
-        ApiConfig.instanceRetrofit.tb_pembeli(nama.text.toString(), jenkel.text.toString(), notelp.text.toString(), username.text.toString(), password.text.toString()).enqueue(object : Callback<ResponseModel>{
+        ApiConfig.instanceRetrofit.daftar(nama.text.toString(), jenkel.text.toString(), notelp.text.toString(), username.text.toString(), password.text.toString()).enqueue(object : Callback<ResponseModel>{
 
             override fun onResponse(call: Call<ResponseModel>, response: Response<ResponseModel>) {
 
                 val respon = response.body()!!
                 if(respon.success == true){
-                    val intent = Intent(this@Register_Activity, MainActivity::class.java)
+                    val intent = Intent(this@Register_Activity, Login_Activity::class.java)
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
                     startActivity(intent)
                     finish()

@@ -11,8 +11,8 @@ import retrofit2.http.GET
 interface ApiInterface {
 
     @FormUrlEncoded
-    @POST("pembeli/add")
-    fun tb_pembeli(
+    @POST("user")
+    fun daftar(
         @Field("nama") nama: String,
         @Field("jenkel") jenkel: String,
         @Field("notelp") notelp: String,
@@ -20,13 +20,11 @@ interface ApiInterface {
         @Field("password") password: String
     ): Call<ResponseModel>
 
-    @POST("pembeli")
+    @GET("user/username")
     fun login(
-        @Field("username") username: String,
-        @Field("password") password: String
     ): Call<ResponseModel>
 
     @GET("dagangan")
-    fun getdagangan(
+    fun getDagangan(
     ): Call<ResponseModel>
 }

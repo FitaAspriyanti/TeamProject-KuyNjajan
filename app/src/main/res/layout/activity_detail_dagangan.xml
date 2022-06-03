@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#EEF4F3F3"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".activity.ui.HalamanDetail_Activity">
 
     <include
         layout="@layout/title"
@@ -75,7 +76,15 @@
                         android:textSize="16dp"
                         android:textStyle="bold" />
 
-
+                    <TextView
+                        android:id="@+id/asal_dagangan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Jawa Barat"
+                        android:textColor="@color/utama"
+                        android:textSize="16dp"
+                        android:textStyle="bold" />
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -109,7 +118,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/deskripsi_dagangan"
+                    android:id="@+id/deskripsi"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="15dp"
@@ -160,7 +169,7 @@
             android:paddingVertical="10dp">
 
             <RelativeLayout
-                android:id="@+id/btn_favorit"
+                android:id="@+id/btn_wistlist"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/ic_baseline_favorite_24">
@@ -177,7 +186,7 @@
             </RelativeLayout>
 
             <RelativeLayout
-                android:id="@+id/btn_keranjang"
+                android:id="@+id/btn_troli"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
@@ -186,7 +195,10 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
                     app:srcCompat="@drawable/ic_baseline_shopping_cart_24" />
 
             </RelativeLayout>

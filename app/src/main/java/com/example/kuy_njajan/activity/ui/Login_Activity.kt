@@ -33,38 +33,38 @@ class Login_Activity : AppCompatActivity(){
     }
 
     fun login(){
-         if (username.text.isEmpty()) {
-                username.error = "Nama Akun tidak boleh kosong"
-                username.requestFocus()
-                return
-           }else if (password.text.isEmpty()) {
-                password.error = "Password tidak boleh kosong"
-                password.requestFocus()
-                return
+        if (username.text.isEmpty()) {
+            username.error = "Nama Akun tidak boleh kosong"
+            username.requestFocus()
+            return
+        }else if (password.text.isEmpty()) {
+            password.error = "Password tidak boleh kosong"
+            password.requestFocus()
+            return
+        }
+        ApiConfig.instanceRetrofit.login().enqueue(object :
+            Callback<ResponseModel> {
+
+            override fun onResponse(call: Call<ResponseModel>, response: Response<ResponseModel>) {
+
+                val respon = response.body()!!
+                if(respon.success){
+                    val intent = Intent(this@Login_Activity, MainActivity::class.java)
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
+                    startActivity(intent)
+                    finish()
+                    Toast.makeText(this@Login_Activity, "Masuk Akun Berhasil -" + respon.message, Toast.LENGTH_SHORT).show()
+                }else{
+                    Toast.makeText(this@Login_Activity, "Nama Akun dan password Salah  -" + respon.message, Toast.LENGTH_SHORT).show()
+                }
+
             }
-            ApiConfig.instanceRetrofit.login(username.text.toString(), password.text.toString()).enqueue(object :
-                Callback<ResponseModel> {
 
-                override fun onResponse(call: Call<ResponseModel>, response: Response<ResponseModel>) {
+            override fun onFailure(call: Call<ResponseModel>, t: Throwable) {
+                Toast.makeText(this@Login_Activity, "Nama Akun dan password Salah " + t.message, Toast.LENGTH_SHORT).show()
+            }
 
-                    val respon = response.body()!!
-                    if(respon.success){
-                        val intent = Intent(this@Login_Activity, MainActivity::class.java)
-                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
-                        startActivity(intent)
-                        finish()
-                        Toast.makeText(this@Login_Activity, "Masuk Akun Berhasil -" + respon.message, Toast.LENGTH_SHORT).show()
-                    }else{
-                        Toast.makeText(this@Login_Activity, "Nama Akun dan password Salah  -" + respon.message, Toast.LENGTH_SHORT).show()
-                    }
-
-                }
-
-                override fun onFailure(call: Call<ResponseModel>, t: Throwable) {
-                    Toast.makeText(this@Login_Activity, "Nama Akun dan password Salah " + t.message, Toast.LENGTH_SHORT).show()
-                }
-
-            })
+        })
     }
 
 }

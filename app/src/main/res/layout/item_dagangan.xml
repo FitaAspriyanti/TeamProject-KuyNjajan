@@ -14,15 +14,15 @@
         android:layout_height="wrap_content">
 
         <ImageView
-            android:id="@+id/foto_dagangan"
+            android:id="@+id/fotoDagangan"
             android:layout_width="150dp"
             android:layout_height="150dp"
-            android:src="@drawable/ic_baseline_picture_in_picture_24"/>
+            android:src="@drawable/logologin"/>
 
         <TextView
             android:layout_marginHorizontal="5dp"
             android:layout_marginTop="4dp"
-            android:id="@+id/nama_dagangan"
+            android:id="@+id/nama"
             android:ellipsize="marquee"
             android:textSize="15sp"
             android:layout_width="match_parent"
@@ -30,22 +30,22 @@
             android:text="Nama Produk"/>
 
         <TextView
-            android:id="@+id/khas_dagangan"
+            android:id="@+id/asal"
+            android:layout_width="wrap_content"
+            android:layout_height="15dp"
+            android:layout_marginHorizontal="5dp"
+            android:layout_marginTop="3dp"
+            android:text="Bogor- Jawa Barat"
             android:textColor="@color/utama"
             android:textSize="10dp"
-            android:textStyle="bold"
-            android:layout_marginTop="3dp"
-            android:layout_marginHorizontal="5dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Bogor- Jawa Barat" />
+            android:textStyle="bold" />
 
         <TextView
             android:layout_marginTop="8dp"
             android:layout_marginBottom="10dp"
             android:textSize="16dp"
             android:layout_marginHorizontal="5dp"
-            android:id="@+id/harga_dagangan"
+            android:id="@+id/harga"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Rp.0"/>

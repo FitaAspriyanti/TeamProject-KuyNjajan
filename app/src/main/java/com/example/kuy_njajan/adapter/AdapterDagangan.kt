@@ -1,22 +1,35 @@
 package com.example.kuy_njajan.adapter
 
+import android.app.Activity
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.ListView
 import android.widget.TextView
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.kuy_njajan.MainActivity
 import com.example.kuy_njajan.R
-import com.example.kuy_njajan.model.DaganganKotlin
+import com.example.kuy_njajan.activity.ui.Detaildagangan_Activity
+import com.example.kuy_njajan.model.Dagangan
+import com.google.gson.Gson
+import com.squareup.picasso.Picasso
+import java.text.NumberFormat
+import java.util.*
+import kotlin.collections.ArrayList
 
-class AdapterDagangan( var data:ArrayList<DaganganKotlin>) : RecyclerView.Adapter<AdapterDagangan.Holder>() {
+class AdapterDagangan(var activity: Activity, var data:ArrayList<Dagangan>) : RecyclerView.Adapter<AdapterDagangan.Holder>() {
 
     class Holder(view: View) : RecyclerView.ViewHolder(view) {
+        val namaKuliner = view.findViewById<TextView>(R.id.nama)
+        val asalKuliner = view.findViewById<TextView>(R.id.asal)
+        val hargaKuliner = view.findViewById<TextView>(R.id.harga)
+        val fotoKuliner = view.findViewById<ImageView>(R.id.fotoDagangan)
+        val layoutKuliner = view.findViewById<CardView>(R.id.l_dagangan)
+//        val deskripsiKuliner = view.findViewById<TextView>(R.id.deskripsi)
 
-        val namaDagangan = view.findViewById<TextView>(R.id.nama_dagangan)
-        val khasDagangan = view.findViewById<TextView>(R.id.khas_dagangan)
-        val hargaDagangan = view.findViewById<TextView>(R.id.harga_dagangan)
-        val fotoDagangan = view.findViewById<ImageView>(R.id.foto_dagangan)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
@@ -30,23 +43,25 @@ class AdapterDagangan( var data:ArrayList<DaganganKotlin>) : RecyclerView.Adapte
 
     override fun onBindViewHolder(holder: Holder, position: Int) {
 
-        holder.namaDagangan.text = data[position].nama_dagangan
-        holder.khasDagangan.text = data[position].khas_dagangan
-        holder.hargaDagangan.text = data[position].harga_dagangan
-        holder.fotoDagangan.setImageResource(data[position].foto_dagangan)
-//        val image = Config.productUrl + data[position].fotoDagangan
-//        Picasso.get()
-//            .load(image)
-//            .placeholder(R.drawable.ic_baseline_picture_in_picture_24)
-//            .error(R.drawable.ic_baseline_picture_in_picture_24)
-//            .into(holder.fotoDagangan)
+        holder.namaKuliner.text = data[position].nama
+        holder.asalKuliner.text = data[position].asal
+        holder.hargaKuliner.text = NumberFormat.getCurrencyInstance(Locale("in", "ID")).format(Integer.valueOf(data[position].harga))
+//        holder.deskripsiKuliner.text = data[position].deskripsi
+        val gambar = "http://192.168.43.146:8080/images" + data[position].foto_dagangan
+        Picasso.get()
+            .load(gambar)
+            .placeholder(R.drawable.logologin)
+            .error(R.drawable.logologin)
+            .into(holder.fotoKuliner)
+        holder.layoutKuliner.setOnClickListener{
+            val intent =Intent(activity, Detaildagangan_Activity::class.java )
+            val dt = Gson().toJson(data[position], Dagangan::class.java)
+            intent.putExtra("detail", dt)
 
-//        holder.lDagangan.setOnClickListener {
-//            val activiti = Intent(activity, Detaildagangan_Activity::class.java)
-//            val str = Gson().toJson(data[position], Dagangan::class.java)
-//            activiti.putExtra("extra", str)
-//            activity.startActivity(activiti)
-//        }
+            activity.startActivity(intent)
+        }
     }
 
 }
+
+

@@ -26,15 +26,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-    <activity
-        android:name=".MainActivity"
-        android:exported="true" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true" />
         <activity
             android:name=".activity.ui.Login_Activity"
             android:exported="true" />
         <activity
             android:name=".activity.ui.Register_Activity"
             android:exported="true" />
+        <activity
+            android:name=".activity.ui.Detaildagangan_Activity"
+            android:exported="true"/>
     </application>
 
 </manifest>
