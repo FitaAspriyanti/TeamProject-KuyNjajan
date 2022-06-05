@@ -60,15 +60,15 @@ class Register_Activity : AppCompatActivity() {
 
             override fun onResponse(call: Call<ResponseModel>, response: Response<ResponseModel>) {
 
-                val respon = response.body()!!
-                if(respon.success == true){
+                val respon = response.body()
+                if(respon?.success == true){
                     val intent = Intent(this@Register_Activity, Login_Activity::class.java)
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
                     startActivity(intent)
                     finish()
                     Toast.makeText(this@Register_Activity, "Daftar Akun Berhasil -" + respon.message, Toast.LENGTH_SHORT).show()
                 }else{
-                    Toast.makeText(this@Register_Activity, "Daftar Akun Gagal -" + respon.message, Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@Register_Activity, "Daftar Akun Gagal -" + respon?.message, Toast.LENGTH_SHORT).show()
                 }
 
             }

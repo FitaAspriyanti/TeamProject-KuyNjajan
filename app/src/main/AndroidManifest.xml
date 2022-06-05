@@ -15,8 +15,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Kuy_Njajan"
+        android:usesCleartextTraffic="true"
         tools:targetApi="31">
-
+        <activity
+            android:name=".activity.ui.WelcomeSellerActivity"
+            android:exported="false" />
         <activity
             android:name=".activity.ui.Splashscreen_Activity"
             android:exported="true">
@@ -37,7 +40,7 @@
             android:exported="true" />
         <activity
             android:name=".activity.ui.Detaildagangan_Activity"
-            android:exported="true"/>
+            android:exported="true" />
     </application>
 
 </manifest>

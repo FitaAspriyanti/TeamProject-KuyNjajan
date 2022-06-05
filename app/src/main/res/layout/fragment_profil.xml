@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragment.ProfilFragment"
+    android:id="@+id/rl_profil"
     android:background="@color/white"
     android:orientation="vertical">
 
@@ -190,6 +191,7 @@
                         android:gravity="center_vertical">
 
                         <LinearLayout
+                            android:id="@+id/mulai_jual"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center_vertical"
@@ -201,7 +203,8 @@
                                 app:srcCompat="@drawable/ic_baseline_storefront" />
 
                             <TextView
-                                android:layout_width="wrap_content"
+                                android:id="@+id/tv_mulai_jual"
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="10dp"
                                 android:text="@string/mulai_jual"

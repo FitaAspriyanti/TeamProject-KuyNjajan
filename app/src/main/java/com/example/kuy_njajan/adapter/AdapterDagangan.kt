@@ -15,7 +15,7 @@ import com.example.kuy_njajan.R
 import com.example.kuy_njajan.activity.ui.Detaildagangan_Activity
 import com.example.kuy_njajan.model.Dagangan
 import com.google.gson.Gson
-import com.squareup.picasso.Picasso
+//import com.squareup.picasso.Picasso
 import java.text.NumberFormat
 import java.util.*
 import kotlin.collections.ArrayList
@@ -47,12 +47,12 @@ class AdapterDagangan(var activity: Activity, var data:ArrayList<Dagangan>) : Re
         holder.asalKuliner.text = data[position].asal
         holder.hargaKuliner.text = NumberFormat.getCurrencyInstance(Locale("in", "ID")).format(Integer.valueOf(data[position].harga))
 //        holder.deskripsiKuliner.text = data[position].deskripsi
-        val gambar = "http://192.168.43.146:8080/images" + data[position].foto_dagangan
-        Picasso.get()
+        val gambar = "http://192.168.0.106:8080/images" + data[position].foto_dagangan
+        /*Picasso.get()
             .load(gambar)
             .placeholder(R.drawable.logologin)
             .error(R.drawable.logologin)
-            .into(holder.fotoKuliner)
+            .into(holder.fotoKuliner)*/
         holder.layoutKuliner.setOnClickListener{
             val intent =Intent(activity, Detaildagangan_Activity::class.java )
             val dt = Gson().toJson(data[position], Dagangan::class.java)
