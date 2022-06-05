@@ -19,4 +19,11 @@
     <string name="mulai_jual">Mulai Jual</string>
     <string name="kuylapak_welcome">Ayo daftarkan tokomu untuk mulai berjualan!</string>
     <string name="mulai_pendaftaran">Mulai Pendaftaran</string>
+    <string name="nama_toko">Nama Toko</string>
+    <string name="alamat_toko">Alamat Toko</string>
+    <string name="tulis_nama_toko_kamu_disini">Tulis nama toko kamu disini</string>
+    <string name="lengkapi_alamat_toko_kamu_disini">Lengkapi alamat toko kamu disini</string>
+    <string name="no_telepon">No. Telepon</string>
+    <string name="masukkan_nomor_telepon_kamu_disini">Masukkan nomor telepon kamu disini</string>
+    <string name="simpan">SIMPAN</string>
 </resources>
