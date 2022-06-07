@@ -26,7 +26,7 @@ class WelcomeSellerActivity : AppCompatActivity(), View.OnClickListener {
     override fun onClick(p0: View?) {
         when (p0?.id) {
             R.id.btn_daftar_penjual -> {
-                val intent = Intent(this@WelcomeSellerActivity, ShopRegisterActivity::class.java)
+                val intent = Intent(this@WelcomeSellerActivity, StoreRegisterActivity::class.java )
                 startActivity(intent)
             }
         }

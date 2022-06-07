@@ -21,8 +21,8 @@
             android:name=".activity.ui.AddNewProductActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.ui.ShopRegisterActivity"
-            android:exported="false" />
+            android:name=".activity.ui.StoreRegisterActivity"
+            android:exported="true" />
         <activity
             android:name=".activity.ui.WelcomeSellerActivity"
             android:exported="false" />
