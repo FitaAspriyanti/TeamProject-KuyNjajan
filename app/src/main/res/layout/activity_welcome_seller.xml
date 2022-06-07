@@ -13,13 +13,13 @@
 
     <ImageView
         android:id="@+id/kuy_lapak"
-        android:layout_width="403dp"
+        android:layout_width="match_parent"
         android:layout_height="403dp"
         android:layout_marginTop="52dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/kuylapak_logo" />
+        app:srcCompat="@drawable/maujual2" />
 
     <TextView
         android:id="@+id/textView"
@@ -32,12 +32,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/kuy_lapak" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_daftar_penjual"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/mulai_pendaftaran"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="35dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="@string/mulai_pendaftaran"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:theme="@style/Theme.MaterialComponents"
+        app:backgroundTint="@color/utama"
+        app:cornerRadius="50dp"
+        app:elevation="5dp"
+        app:rippleColor="@color/utama" />
 </androidx.constraintlayout.widget.ConstraintLayout>

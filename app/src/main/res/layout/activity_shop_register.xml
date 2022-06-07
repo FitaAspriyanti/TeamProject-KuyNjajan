@@ -6,17 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".activity.ui.ShopRegisterActivity">
 
-    <include
-        layout="@layout/title"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
 
     <TextView
         android:id="@+id/tv_nama_toko"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:layout_marginStart="12dp"
-        android:layout_marginTop="65dp"
         android:text="@string/nama_toko"
         android:textSize="16sp"
         android:textStyle="bold"
@@ -28,8 +24,12 @@
         android:layout_width="387dp"
         android:layout_height="45dp"
         android:hint="@string/tulis_nama_toko_kamu_disini"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/tv_nama_toko"
-        app:layout_constraintTop_toBottomOf="@+id/tv_nama_toko" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.046" />
 
     <TextView
         android:id="@+id/alamat_toko"
@@ -46,6 +46,7 @@
         android:id="@+id/et_alamat_toko"
         android:layout_width="387dp"
         android:layout_height="45dp"
+        android:layout_marginTop="1.5dp"
         android:hint="@string/lengkapi_alamat_toko_kamu_disini"
         app:layout_constraintStart_toStartOf="@+id/alamat_toko"
         app:layout_constraintTop_toBottomOf="@+id/alamat_toko" />
@@ -54,8 +55,8 @@
         android:id="@+id/tv_no_telepon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
         android:text="@string/no_telepon"
+        android:layout_marginTop="20dp"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/et_alamat_toko"

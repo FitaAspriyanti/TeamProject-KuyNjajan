@@ -47,12 +47,11 @@ class AdapterDagangan(var activity: Activity, var data:ArrayList<Dagangan>) : Re
         holder.asalKuliner.text = data[position].asal
         holder.hargaKuliner.text = NumberFormat.getCurrencyInstance(Locale("in", "ID")).format(Integer.valueOf(data[position].harga))
 //        holder.deskripsiKuliner.text = data[position].deskripsi
-        val gambar = "http://192.168.43.146:8080/images" + data[position].foto_dagangan
+        val image = "http://192.168.43.146:8000/images/" + data[position].foto_dagangan
         Picasso.get()
-            .load(gambar)
-            .placeholder(R.drawable.logologin)
-            .error(R.drawable.logologin)
+            .load(image)
             .into(holder.fotoKuliner)
+        
         holder.layoutKuliner.setOnClickListener{
             val intent =Intent(activity, Detaildagangan_Activity::class.java )
             val dt = Gson().toJson(data[position], Dagangan::class.java)
