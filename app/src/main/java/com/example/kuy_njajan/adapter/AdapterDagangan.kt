@@ -51,7 +51,7 @@ class AdapterDagangan(var activity: Activity, var data:ArrayList<Dagangan>) : Re
         Picasso.get()
             .load(image)
             .into(holder.fotoKuliner)
-        
+
         holder.layoutKuliner.setOnClickListener{
             val intent =Intent(activity, Detaildagangan_Activity::class.java )
             val dt = Gson().toJson(data[position], Dagangan::class.java)

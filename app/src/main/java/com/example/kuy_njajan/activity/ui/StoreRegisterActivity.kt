@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.widget.Toast
 import com.example.kuy_njajan.R
 import com.example.kuy_njajan.data.ApiConfig
-import com.example.kuy_njajan.model.StoreResponse
+import com.example.kuy_njajan.model.ResponseModel
 import kotlinx.android.synthetic.main.activity_shop_register.*
 import kotlinx.android.synthetic.main.title.*
 import retrofit2.Call
@@ -47,10 +47,10 @@ class StoreRegisterActivity : AppCompatActivity() {
             et_alamat_toko.text.toString(),
             et_no_telepon.text.toString()
         ).enqueue(
-            object : retrofit2.Callback<StoreResponse> {
+            object : retrofit2.Callback<ResponseModel> {
                 override fun onResponse(
-                    call: Call<StoreResponse>,
-                    response: Response<StoreResponse>
+                    call: Call<ResponseModel>,
+                    response: Response<ResponseModel>
                 ) {
                     val response = response.body()
                     if (response?.success == true) {
@@ -62,7 +62,7 @@ class StoreRegisterActivity : AppCompatActivity() {
                     }
                 }
 
-                override fun onFailure(call: Call<StoreResponse>, t: Throwable) {
+                override fun onFailure(call: Call<ResponseModel>, t: Throwable) {
                     Toast.makeText(this@StoreRegisterActivity, "Pendaftaran Toko Gagal, Coba Lagi - " + t.message, Toast.LENGTH_SHORT).show()
                 }
 
