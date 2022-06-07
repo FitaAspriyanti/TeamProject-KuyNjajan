@@ -20,8 +20,11 @@ interface ApiInterface {
         @Field("password") password: String
     ): Call<ResponseModel>
 
-    @GET("user/username")
+    @FormUrlEncoded
+    @POST("user/login")
     fun login(
+        @Field("username") username: String,
+        @Field("password") password: String
     ): Call<ResponseModel>
 
     @GET("dagangan")

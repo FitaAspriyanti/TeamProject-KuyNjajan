@@ -1,17 +1,23 @@
 package com.example.kuy_njajan.activity.ui
 
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.example.kuy_njajan.R
 import com.example.kuy_njajan.model.Dagangan
+import com.example.kuy_njajan.room.MyDatabase
 import com.google.gson.Gson
 import com.squareup.picasso.Picasso
+import io.reactivex.Observable
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.disposables.CompositeDisposable
+import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.activity_detail_dagangan.*
 import kotlinx.android.synthetic.main.title.*
 
 class Detaildagangan_Activity : AppCompatActivity() {
 //    lateinit var dbKuyNjajan : DatabaseKuyNjajan
-////    lateinit var dagangan: Dagangan
+    lateinit var dagangan: Dagangan
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,40 +25,49 @@ class Detaildagangan_Activity : AppCompatActivity() {
 //        dbKuyNjajan = DatabaseKuyNjajan.getInstance(this)!! // call database
 //
         getData()
-//        mainButton()
+        mainButton()
     }
-    //    fun mainButton(){
-//        btn_troli.setOnClickListener{
-//        }
-//    }
-//
-//    fun insertData(){
-//        val myDb: DatabaseKuyNjajan = DatabaseKuyNjajan.getInstance(this)!!
-//        val troli = Dagangan()
-//        troli.nama= "Makanan Daerah"
-//
-//        CompositeDisposable().add(Observable.fromCallable { myDb.daoTroli().insert(troli) }
-//            .subscribeOn(Schedulers.computation())
-//            .observeOn(AndroidSchedulers.mainThread())
-//            .subscribe {
-//                Log.d("respons", "data berhasil")
-//            })
-//    }
+
+        fun mainButton(){
+        btn_keranjang.setOnClickListener{
+            insertData()
+        }
+            btn_wistlist.setOnClickListener {
+                val myDb: MyDatabase = MyDatabase.getInstance(this)!!
+                val listData = myDb.daoKeranjang().getAll()
+                for(note :Dagangan in listData){
+                    println("-----------------------")
+                    println(note.nama)
+                    println(note.harga)
+                }
+            }
+    }
+
+    fun insertData(){
+        val myDb: MyDatabase = MyDatabase.getInstance(this)!!
+        val note = Dagangan()
+        note.nama= "Makanan Daerah"
+
+        CompositeDisposable().add(Observable.fromCallable { myDb.daoKeranjang().insert(note) }
+            .subscribeOn(Schedulers.computation())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe {
+                Log.d("respons", "data berhasil")
+            })
+    }
+
     private fun getData() {
         val data = intent.getStringExtra("detail")
-        val dagangan = Gson().fromJson<Dagangan>(data, Dagangan::class.java)
-//        val dagangan = Gson().fromJson<Dagangan>(data, Dagangan::class.java)
+        dagangan = Gson().fromJson<Dagangan>(data, Dagangan::class.java)
+
         nama_dagangan.text = dagangan.nama
         harga_dagangan.text = dagangan.harga
         asal_dagangan.text = dagangan.asal
-//        deskripsi.text = dagangan.deskripsi
+        deskripsi.text = dagangan.deskripsi
 
-        val gbr = "http://192.168.43.146:8080/images" + dagangan.foto_dagangan
+        val image = "http://192.168.43.146:8000/images/" + dagangan.foto_dagangan
         Picasso.get()
-            .load(gbr)
-            .placeholder(R.drawable.logologin)
-            .error(R.drawable.logologin)
-            .resize(400, 400)
+            .load(image)
             .into(foto_dagangan)
 //
         setSupportActionBar(toolbar)

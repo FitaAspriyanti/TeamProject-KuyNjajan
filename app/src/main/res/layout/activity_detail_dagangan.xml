@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#EEF4F3F3"
     android:orientation="vertical"
-    tools:context=".activity.ui.HalamanDetail_Activity">
+    tools:context=".activity.ui.Detaildagangan_Activity">
 
     <include
         layout="@layout/title"
@@ -186,7 +186,7 @@
             </RelativeLayout>
 
             <RelativeLayout
-                android:id="@+id/btn_troli"
+                android:id="@+id/btn_keranjang"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"

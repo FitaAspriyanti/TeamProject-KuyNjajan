@@ -6,25 +6,36 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.FragmentTransaction
+import android.widget.Button
+import android.widget.RelativeLayout
 import com.example.kuy_njajan.R
+import com.example.kuy_njajan.activity.shared.*
+import com.example.kuy_njajan.activity.ui.Login_Activity
 import com.example.kuy_njajan.activity.ui.WelcomeSellerActivity
-import com.example.kuy_njajan.databinding.FragmentProfilBinding
-import kotlinx.android.synthetic.main.fragment_profil.*
 
 class ProfilFragment : Fragment() {
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
 
-        val bind = FragmentProfilBinding.inflate(layoutInflater)
+    lateinit var s: SharedPreferencesLogin
+    lateinit var btnLogout: Button
+    lateinit var btnMulaiJual: RelativeLayout
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        val view: View = inflater.inflate(R.layout.fragment_profil, container, false)
+        init(view)
 
-        bind.tvMulaiJual.setOnClickListener {
-            val intent = Intent(this@ProfilFragment.requireContext(), WelcomeSellerActivity::class.java)
-            startActivity(intent)
+        s = SharedPreferencesLogin(requireActivity())
+        btnLogout.setOnClickListener {
+            s.setStatus(false)
         }
 
-        return bind.root
+        btnMulaiJual.setOnClickListener {
+            startActivity(Intent(requireActivity(), WelcomeSellerActivity::class.java))
+        }
+        return view
     }
+
+    private fun init(view: View) {
+        btnLogout = view.findViewById(R.id.btn_logout)
+        btnMulaiJual = view.findViewById(R.id.btn_mulaijual)
+    }
+
 }
