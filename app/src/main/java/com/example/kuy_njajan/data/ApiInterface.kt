@@ -34,8 +34,10 @@ interface ApiInterface {
     @FormUrlEncoded
     @POST("toko")
     fun daftarToko(
-        @Field("nama_toko") namaToko: String,
-        @Field("alamat_toko") alamatToko: String,
-        @Field("no_telepon") noTelepon: String
+        @Field("nama") nama: String,
+        @Field("alamat") alamat: String,
+//        @Field("foto") foto: String,
+        @Field("notelp") notelp: String,
+        @Field("iduser") iduser: String
     ): Call<ResponseModel>
 }

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.ui.ShopRegisterActivity">
+    tools:context=".activity.ui.RegisterToko">
 
 
     <TextView
@@ -51,24 +51,64 @@
         app:layout_constraintStart_toStartOf="@+id/alamat_toko"
         app:layout_constraintTop_toBottomOf="@+id/alamat_toko" />
 
+<!--    <TextView-->
+<!--        android:id="@+id/tv_foto"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:text="Foto"-->
+<!--        android:textSize="16sp"-->
+<!--        android:textStyle="bold"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/et_alamat_toko"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/et_alamat_toko" />-->
+
+<!--    <EditText-->
+<!--        android:id="@+id/et_foto"-->
+<!--        android:layout_width="387dp"-->
+<!--        android:layout_height="45dp"-->
+<!--        android:layout_marginTop="1.5dp"-->
+<!--        android:hint="@string/lengkapi_alamat_toko_kamu_disini"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/tv_foto"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/tv_foto" />-->
+
     <TextView
-        android:id="@+id/tv_no_telepon"
+        android:id="@+id/tv_notelp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/no_telepon"
         android:layout_marginTop="20dp"
+        android:text="@string/no_telepon"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/et_alamat_toko"
         app:layout_constraintTop_toBottomOf="@+id/et_alamat_toko" />
 
     <EditText
-        android:id="@+id/et_no_telepon"
+        android:id="@+id/et_notelp"
         android:layout_width="387dp"
         android:layout_height="45dp"
+        android:layout_marginTop="1.5dp"
         android:hint="@string/masukkan_nomor_telepon_kamu_disini"
-        app:layout_constraintStart_toStartOf="@+id/tv_no_telepon"
-        app:layout_constraintTop_toBottomOf="@+id/tv_no_telepon" />
+        app:layout_constraintStart_toStartOf="@+id/tv_notelp"
+        app:layout_constraintTop_toBottomOf="@+id/tv_notelp" />
+    <TextView
+        android:id="@+id/tv_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="id user"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/et_notelp"
+        app:layout_constraintTop_toBottomOf="@+id/et_notelp" />
+
+    <EditText
+        android:id="@+id/et_id"
+        android:layout_width="387dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="1.5dp"
+        android:hint="@string/masukkan_nomor_telepon_kamu_disini"
+        app:layout_constraintStart_toStartOf="@+id/tv_id"
+        app:layout_constraintTop_toBottomOf="@+id/tv_id" />
 
     <Button
         android:id="@+id/btn_simpan_toko"

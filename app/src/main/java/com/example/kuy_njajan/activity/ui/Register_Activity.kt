@@ -25,7 +25,7 @@ class Register_Activity : AppCompatActivity() {
 
         setContentView(R.layout.activity_register)
         txt_login.setOnClickListener {
-            startActivity(Intent(this, Login_Activity::class.java))
+            startActivity(Intent(this, RegisterToko::class.java))
         }
 
         btn_daftar.setOnClickListener {

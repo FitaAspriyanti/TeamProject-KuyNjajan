@@ -46,7 +46,6 @@ class AdapterDagangan(var activity: Activity, var data:ArrayList<Dagangan>) : Re
         holder.namaKuliner.text = data[position].nama
         holder.asalKuliner.text = data[position].asal
         holder.hargaKuliner.text = NumberFormat.getCurrencyInstance(Locale("in", "ID")).format(Integer.valueOf(data[position].harga))
-//        holder.deskripsiKuliner.text = data[position].deskripsi
         val image = "http://192.168.43.146:8000/images/" + data[position].foto_dagangan
         Picasso.get()
             .load(image)
