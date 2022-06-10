@@ -18,7 +18,6 @@ import retrofit2.Response
 
 class BerandaFragment : Fragment() {
     lateinit var rvKbaru: RecyclerView
-
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
 
         val view: View = inflater.inflate(R.layout.fragment_beranda, container, false)
@@ -55,63 +54,4 @@ class BerandaFragment : Fragment() {
         })
     }
 
-
-//    val arrDagangan: ArrayList<Dagangan>get(){
-//        val arr= ArrayList<Dagangan>()
-//        val d1= Dagangan()
-//        d1.nama_dagangan = "Combro"
-//        d1.khas_dagangan ="Bandung-Jawa Barat"
-//        d1.harga_dagangan ="Rp. 10.000"
-//        d1.foto_dagangan = R.drawable.combro
-//
-//        val d2= Dagangan()
-//        d2.nama_dagangan = "Putri Ayu"
-//        d2.khas_dagangan ="Bandung-Jawa Barat"
-//        d2.harga_dagangan ="Rp. 10.000"
-//        d2.foto_dagangan = R.drawable.putriayu
-//
-//        arr.add(d1)
-//        arr.add(d2)
-//
-//
-//        return arr
-//    }
-//    val arrDaganganLaris: ArrayList<Dagangan>get(){
-//        val arr= ArrayList<Dagangan>()
-//        val d1= Dagangan()
-//        d1.nama_dagangan = "Combro"
-//        d1.khas_dagangan ="Bandung-Jawa Barat"
-//        d1.harga_dagangan ="Rp. 10.000"
-//        d1.foto_dagangan = R.drawable.combro
-//
-//        val d2= Dagangan()
-//        d2.nama_dagangan = "Putri Ayu"
-//        d2.khas_dagangan ="Bandung-Jawa Barat"
-//        d2.harga_dagangan ="Rp. 10.000"
-//        d2.foto_dagangan = R.drawable.putriayu
-//
-//        arr.add(d1)
-//        arr.add(d2)
-//
-//
-//        return arr
-//    }
-
-//
-//    fun getDagangan() {
-//        ApiConfig.instanceRetrofit.getdagangan().enqueue(object : Callback<ResponseModel> {
-//            override fun onFailure(call: Call<ResponseModel>, t: Throwable) {
-//            }
-//
-//            override fun onResponse(call: Call<ResponseModel>, response: Response<ResponseModel>) {
-//                val res = response.body()!!
-//
-//            }
-//        })
-//    }
-//
-//    fun init(view: View) {
-//        rvKlaris = view.findViewById(R.id.rv_kulinerlaris)
-//        rvKbaru = view.findViewById(R.id.rv_kulinerbaru)
-//    }
 }

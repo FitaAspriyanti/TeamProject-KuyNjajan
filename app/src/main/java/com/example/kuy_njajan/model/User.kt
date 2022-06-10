@@ -1,11 +1,14 @@
-//package com.example.kuy_njajan.model
-//import java.io.Serializable
-//data class User (
-//    val  id_user: String,
-//    val  nama:String,
-//    val jen_kel : String,
-//    val no_telp : String,
-//    val foto: String,
-//   val username:String,
-//    val password:String
-//    ):Serializable
+import com.google.gson.annotations.SerializedName
+
+
+data class User (
+
+    @SerializedName("id_user"  ) var idUser   : String? = null,
+    @SerializedName("nama"     ) var nama     : String? = null,
+    @SerializedName("jen_kel"  ) var jenKel   : String? = null,
+    @SerializedName("no_telp"  ) var noTelp   : String? = null,
+    @SerializedName("foto"     ) var foto     : String? = null,
+    @SerializedName("username" ) var username : String? = null,
+    @SerializedName("password" ) var password : String? = null
+
+)

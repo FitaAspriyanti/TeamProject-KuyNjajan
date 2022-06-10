@@ -6,12 +6,12 @@ import androidx.room.PrimaryKey;
 
 import java.io.Serializable;
 
-@Entity(tableName = "keranjang")
+@Entity(tableName = "belisekarang")
 public class Dagangan implements Serializable {
 
     @PrimaryKey(autoGenerate = true)
-    @ColumnInfo(name = "idTb")
-    public String idTb;
+    @ColumnInfo(name = "idK")
+    public int idK;
 
     public String id;
     public String nama;
@@ -21,5 +21,6 @@ public class Dagangan implements Serializable {
     public String deskripsi;
     public String foto_dagangan;
     public String id_toko;
-
+    public int jumlah = 1;
+    public boolean ceklis;
 }

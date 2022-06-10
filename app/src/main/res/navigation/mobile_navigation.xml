@@ -16,7 +16,11 @@
         android:name="com.example.kuy_njajan.fragment.WistlistFragment"
         android:label="@string/title_wistlist"
         tools:layout="@layout/fragment_wistlist" />
-
+    <fragment
+        android:id="@+id/navigation_keranjang"
+        android:name="com.example.kuy_njajan.fragment.WistlistFragment"
+        android:label="keranjang"
+        tools:layout="@layout/fragment_keranjang" />
     <fragment
         android:id="@+id/navigation_profil"
         android:name="com.example.kuy_njajan.fragment.ProfilFragment"

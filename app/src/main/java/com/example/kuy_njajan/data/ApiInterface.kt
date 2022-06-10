@@ -1,5 +1,6 @@
 package com.example.kuy_njajan.data
 
+import com.example.kuy_njajan.model.ResponUser
 import com.example.kuy_njajan.model.ResponseModel
 import retrofit2.Call
 import retrofit2.http.Field
@@ -25,7 +26,7 @@ interface ApiInterface {
     fun login(
         @Field("username") username: String,
         @Field("password") password: String
-    ): Call<ResponseModel>
+    ): Call<ResponUser>// perubahan 3
 
     @GET("dagangan")
     fun getDagangan(
