@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.kuy_njajan.R
 import com.example.kuy_njajan.activity.shared.helper.Constant
+import com.example.kuy_njajan.activity.shared.helper.PrefHelper
 import com.example.kuy_njajan.adapter.AdapterDagangan
 import com.example.kuy_njajan.data.ApiConfig
 import com.example.kuy_njajan.model.Dagangan
@@ -21,13 +22,15 @@ import retrofit2.Response
 class BerandaFragment : Fragment() {
     lateinit var rvKbaru: RecyclerView
     lateinit var  textNama : TextView
+    lateinit var prefHelper: PrefHelper
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
 
         val view: View = inflater.inflate(R.layout.fragment_beranda, container, false)
         init(view)
+        prefHelper = PrefHelper(requireActivity())
         rvKbaru = view.findViewById(R.id.rv_kulinerbaru)
         getdagangan()
-
+        textNama.text = prefHelper.getString( Constant.pref_nama )
         return view
 
     }

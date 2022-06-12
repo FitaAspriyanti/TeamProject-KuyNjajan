@@ -30,24 +30,27 @@
         <entry key="..\:/Users/joyo/AndroidStudioProjects/Kuy_Njajan/app/src/main/res/layout/register.xml" value="0.1" />
         <entry key="..\:/Users/joyo/AndroidStudioProjects/Kuy_Njajan/app/src/main/res/layout/splash_screen.xml" value="0.1" />
         <entry key="..\:/Users/joyo/AndroidStudioProjects/Kuy_Njajan/app/src/main/res/menu/bottom_nav_menu.xml" value="0.1" />
+        <entry key="..\:/Users/joyo/Documents/TeamProject-KuyNjajan/app/src/main/res/drawable-v24/ic_baseline_emojiputih.xml" value="0.1525" />
         <entry key="..\:/Users/joyo/Documents/TeamProject-KuyNjajan/app/src/main/res/drawable/ic_baseline_arrow_forward_ios_24.xml" value="0.132" />
         <entry key="..\:/Users/joyo/Documents/TeamProject-KuyNjajan/app/src/main/res/layout/activity_add_new_product.xml" value="0.1" />
         <entry key="..\:/Users/joyo/Documents/TeamProject-KuyNjajan/app/src/main/res/layout/activity_belisekarang.xml" value="0.1" />
         <entry key="..\:/Users/joyo/Documents/TeamProject-KuyNjajan/app/src/main/res/layout/activity_detail_dagangan.xml" value="0.21" />
         <entry key="..\:/Users/joyo/Documents/TeamProject-KuyNjajan/app/src/main/res/layout/activity_keranjang.xml" value="0.159375" />
-        <entry key="..\:/Users/joyo/Documents/TeamProject-KuyNjajan/app/src/main/res/layout/activity_login.xml" value="0.13802083333333334" />
+        <entry key="..\:/Users/joyo/Documents/TeamProject-KuyNjajan/app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="..\:/Users/joyo/Documents/TeamProject-KuyNjajan/app/src/main/res/layout/activity_main.xml" value="0.13802083333333334" />
         <entry key="..\:/Users/joyo/Documents/TeamProject-KuyNjajan/app/src/main/res/layout/activity_register.xml" value="0.13802083333333334" />
         <entry key="..\:/Users/joyo/Documents/TeamProject-KuyNjajan/app/src/main/res/layout/activity_riwayat.xml" value="0.125" />
         <entry key="..\:/Users/joyo/Documents/TeamProject-KuyNjajan/app/src/main/res/layout/activity_shop_register.xml" value="0.18" />
+        <entry key="..\:/Users/joyo/Documents/TeamProject-KuyNjajan/app/src/main/res/layout/activity_upload_product.xml" value="0.13858695652173914" />
         <entry key="..\:/Users/joyo/Documents/TeamProject-KuyNjajan/app/src/main/res/layout/activity_welcome_seller.xml" value="0.18" />
         <entry key="..\:/Users/joyo/Documents/TeamProject-KuyNjajan/app/src/main/res/layout/activityjual_daftartoko.xml" value="0.22" />
-        <entry key="..\:/Users/joyo/Documents/TeamProject-KuyNjajan/app/src/main/res/layout/fragment_beranda.xml" value="0.21" />
+        <entry key="..\:/Users/joyo/Documents/TeamProject-KuyNjajan/app/src/main/res/layout/dialogpesan.xml" value="0.15" />
+        <entry key="..\:/Users/joyo/Documents/TeamProject-KuyNjajan/app/src/main/res/layout/fragment_beranda.xml" value="0.24444444444444444" />
         <entry key="..\:/Users/joyo/Documents/TeamProject-KuyNjajan/app/src/main/res/layout/fragment_keranjang.xml" value="0.1" />
         <entry key="..\:/Users/joyo/Documents/TeamProject-KuyNjajan/app/src/main/res/layout/fragment_profil.xml" value="0.21" />
         <entry key="..\:/Users/joyo/Documents/TeamProject-KuyNjajan/app/src/main/res/layout/fragment_wistlist.xml" value="0.13802083333333334" />
         <entry key="..\:/Users/joyo/Documents/TeamProject-KuyNjajan/app/src/main/res/layout/item_belisekarang.xml" value="0.15" />
-        <entry key="..\:/Users/joyo/Documents/TeamProject-KuyNjajan/app/src/main/res/layout/item_dagangan.xml" value="0.12395833333333334" />
+        <entry key="..\:/Users/joyo/Documents/TeamProject-KuyNjajan/app/src/main/res/layout/item_dagangan.xml" value="0.33" />
         <entry key="..\:/Users/joyo/Documents/TeamProject-KuyNjajan/app/src/main/res/layout/item_keranjang.xml" value="0.4666666666666667" />
         <entry key="..\:/Users/joyo/Documents/TeamProject-KuyNjajan/app/src/main/res/layout/item_riwayatbelanja.xml" value="0.25" />
         <entry key="..\:/Users/joyo/Documents/TeamProject-KuyNjajan/app/src/main/res/layout/item_wistlist.xml" value="0.125" />

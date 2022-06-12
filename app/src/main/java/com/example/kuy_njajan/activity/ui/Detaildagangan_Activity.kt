@@ -35,13 +35,14 @@ class Detaildagangan_Activity : AppCompatActivity() {
 
     fun mainButton(){
         btn_belisekarang.setOnClickListener{
-            val data = myDb.daoBelisekarang().getDagangan(dagangan.id)
-            if(data == null){
-                insertData()
-            }else{
-                data.jumlah = data.jumlah + 1
-                updateData(data)
-            }
+            insertData()
+//            val data = myDb.daoBelisekarang().getDagangan(dagangan.id)
+//            if(data == null){
+//                insertData()
+//            }else{
+//                data.jumlah = data.jumlah + 1
+//                updateData(data)
+//            }
         }
         btn_lanjut.setOnClickListener{
             val intent = Intent( "event: beli")

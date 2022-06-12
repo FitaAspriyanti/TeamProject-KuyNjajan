@@ -3,9 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/l_dagangan"
     android:layout_width="380dp"
-    android:layout_height="125dp"
-    android:layout_marginLeft="12dp"
+    android:layout_height="115dp"
+    android:layout_marginLeft="15dp"
     android:layout_marginRight="12dp"
+    android:layout_marginBottom="10dp"
     app:cardCornerRadius="5dp"
     android:layout_marginVertical="1dp">
 
@@ -22,8 +23,8 @@
 
             <ImageView
                 android:id="@+id/fotoDagangan"
-                android:layout_width="150dp"
-                android:layout_height="100dp"
+                android:layout_width="140dp"
+                android:layout_height="95dp"
                 android:src="@drawable/logologin" />
 
             <LinearLayout
@@ -40,8 +41,8 @@
                         android:id="@+id/nama"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="20dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="10dp"
                         android:layout_marginRight="5dp"
                         android:ellipsize="marquee"
                         android:text="Nama Produk"
@@ -54,13 +55,13 @@
                     android:id="@+id/asal"
                     android:layout_width="wrap_content"
                     android:layout_height="25dp"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginLeft="15dp"
                     android:layout_marginTop="2dp"
                     android:layout_marginRight="15dp"
                     android:ellipsize="marquee"
                     android:text="Bandung-Jawa Barat"
                     android:textColor="@color/huruf"
-                    android:textSize="13sp" />
+                    android:textSize="11sp" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -71,17 +72,17 @@
                         android:id="@+id/harga"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
+                        android:layout_marginLeft="15dp"
                         android:layout_marginRight="15dp"
                         android:text="Rp. 10.000"
                         android:textColor="@color/utama"
-                        android:textSize="17dp"
+                        android:textSize="16dp"
                         android:textStyle="bold" />
 
                     <ImageView
                         android:layout_width="40dp"
                         android:layout_height="30dp"
-                        android:layout_marginLeft="50dp"
+                        android:layout_marginLeft="45dp"
                         android:src="@drawable/ic_baseline_arrow_circl_orange" />
                 </LinearLayout>
 
