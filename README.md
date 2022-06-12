@@ -1,3 +1,5 @@
+![kuyNjajan](https://user-images.githubusercontent.com/55282999/173251363-3dd41516-3c39-4ac6-af4b-a9df41a00883.png)
+
 # KuyNjajan
 
 An application that sells a variety of traditional foods.
