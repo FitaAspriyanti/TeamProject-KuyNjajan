@@ -35,12 +35,11 @@ class Detaildagangan_Activity : AppCompatActivity() {
 
     fun mainButton(){
         btn_belisekarang.setOnClickListener{
-            val data = myDb.daoBelisekarang().getDagangan(dagangan.id)
-            if(data == null){
-                insertData()
+            if(dagangan.id == null){
+             insertData()
             }else{
-                data.jumlah = data.jumlah + 1
-                updateData(data)
+                dagangan.jumlah = dagangan.jumlah + 1
+                updateData(dagangan)
             }
         }
         btn_lanjut.setOnClickListener{
@@ -62,8 +61,8 @@ class Detaildagangan_Activity : AppCompatActivity() {
             })
     }
 
-    private fun updateData(data: Dagangan){
-        CompositeDisposable().add(Observable.fromCallable { myDb.daoBelisekarang().update(dagangan) }
+    private fun updateData(dagangan: Dagangan){
+         CompositeDisposable().add(Observable.fromCallable { myDb.daoBelisekarang().update(dagangan) }
             .subscribeOn(Schedulers.computation())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe {
@@ -88,7 +87,7 @@ class Detaildagangan_Activity : AppCompatActivity() {
         asal_dagangan.text = "Khas  " + dagangan.asal
         deskripsi.text = dagangan.deskripsi
 
-        val image = "http://34.143.232.116:8000/images/" + dagangan.foto_dagangan
+        val image = "http://192.168.43.146:8000/images/" + dagangan.foto_dagangan
         Picasso.get()
             .load(image)
             .into(foto_dagangan)

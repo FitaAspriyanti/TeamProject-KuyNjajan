@@ -45,7 +45,7 @@ class AdapterTroli(var activity: Activity, var data:ArrayList<Dagangan>) : Recyc
 
         holder.namaKuliner.text = data[position].nama
         holder.hargaKuliner.text = NumberFormat.getCurrencyInstance(Locale("in", "ID")).format(Integer.valueOf(data[position].harga))
-        val image = "http://192.168.43.146:8000/images/" + data[position].foto_dagangan
+        val image = "http://34.143.232.116:8000/images/" + data[position].foto_dagangan
         Picasso.get()
             .load(image)
             .into(holder.fotoKuliner)

@@ -121,12 +121,13 @@ class Login_Activity : AppCompatActivity(){
         }
     }
 
-    private fun saveSession(username: String, password: String, iduser:String, nama: String, notelp:String){
+    private fun saveSession(username: String, password: String, iduser:String, nama: String, notelp:String, foto:String){
         prefHelper.put( Constant.PREF_USERNAME, username )
         prefHelper.put( Constant.PREF_PASSWORD, password )
         prefHelper.put( Constant.pref_iduser, iduser)
         prefHelper.put( Constant.pref_nama, nama)
         prefHelper.put( Constant.pref_notelp, notelp)
+        prefHelper.put( Constant.pref_foto, foto)
         prefHelper.put( Constant.PREF_IS_LOGIN, true)
     }
 
@@ -151,12 +152,14 @@ class Login_Activity : AppCompatActivity(){
             printlog("username : ${user.username}\n " +
                     "iduser : ${user.idUser}\n" +
                     "nama :${user.nama}\n" +
-                    "notelp: ${user.noTelp}")
+                    "notelp: ${user.noTelp}\n"+
+            "foto: ${user.foto}")
             saveSession("${user.username}",
                 "${user.password}",
                 "${user.idUser}",
                 "${user.nama}",
-                "${user.noTelp}")
+                "${user.noTelp}",
+            "${user.foto}")
 
         }
     }

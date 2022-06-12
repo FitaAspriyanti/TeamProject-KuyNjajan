@@ -20,18 +20,9 @@ class WistlistFragment : Fragment() {
         init(view)
 
         setButton()
-        getDagangan()
         return view
     }
-    fun getDagangan(){
-        val myDb = MyDatabase.getInstance(requireActivity())
-        val listDagangan = myDb!!.daoBelisekarang().getAll() as ArrayList
-        val layoutManager = LinearLayoutManager(activity)
-        layoutManager.orientation = LinearLayoutManager.VERTICAL
 
-        rvWistlist.adapter = AdapterTroli(requireActivity(), listDagangan)
-        rvWistlist.layoutManager = layoutManager
-    }
     fun setButton(){
         btnHapus.setOnClickListener{
 
@@ -45,7 +36,6 @@ class WistlistFragment : Fragment() {
     }
 
     override fun onResume() {
-        getDagangan()
         super.onResume()
     }
 }
