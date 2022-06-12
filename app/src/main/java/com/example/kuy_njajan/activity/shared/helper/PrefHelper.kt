@@ -1,10 +1,10 @@
-package com.example.kuy_njajan.data.helper
+package com.example.kuy_njajan.activity.shared.helper
 
 import android.content.Context
 import android.content.SharedPreferences
 
 class PrefHelper (context: Context) {
-//perubanahan 1
+    //perubanahan 1
     private val PREFS_NAME = "sharedpref12345"
     private var sharedPref: SharedPreferences
     val editor: SharedPreferences.Editor
