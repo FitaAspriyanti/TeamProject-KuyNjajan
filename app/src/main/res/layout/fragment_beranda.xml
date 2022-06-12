@@ -56,20 +56,58 @@
         android:layout_height="match_parent">
 
         <LinearLayout
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="12dp"
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
             <LinearLayout
+                android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/ic_baseline_emoji_nature_24"
+                    android:id="@+id/fotouser"
+                    android:layout_marginLeft="15dp"
+                    android:layout_width="55dp"
+                    android:layout_height="45dp"/>
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_marginLeft="15dp"
+                        android:textSize="20sp"
+                        android:textColor="#7E7C7A"
+                        android:layout_marginTop="8dp"
+                        android:text="Selamat Datang, "
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                    <TextView
+                        android:layout_marginLeft="10dp"
+                        android:textSize="17sp"
+                        android:textColor="#7E7C7A"
+                        android:id="@+id/namauser"
+                        android:text="  Kuy Njajan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:orientation="horizontal"
+                android:layout_marginLeft="60dp"
+                android:layout_marginRight="60dp"
                 android:layout_marginBottom="8dp">
 
                 <androidx.cardview.widget.CardView
-                    android:layout_width="170dp"
-                    android:layout_height="155dp"
+                    android:layout_width="115dp"
+                    android:layout_height="110dp"
                     android:layout_marginLeft="23.5dp"
                     android:layout_marginRight="12dp"
                     android:layout_marginTop="17dp"
@@ -79,8 +117,8 @@
 
                     <ImageView
                         android:id="@+id/iv_makanan"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="107dp"
                         android:src="@drawable/food"/>
                     <TextView
                         android:layout_width="wrap_content"
@@ -92,8 +130,8 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
-                    android:layout_width="170dp"
-                    android:layout_height="155dp"
+                    android:layout_width="115dp"
+                    android:layout_height="110dp"
                     android:layout_marginLeft="12dp"
                     android:layout_marginRight="12dp"
                     android:layout_marginTop="17dp"
@@ -103,8 +141,8 @@
 
                     <ImageView
                         android:id="@+id/iv_minuman"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="107dp"
                         android:src="@drawable/drink"/>
                     <TextView
                         android:layout_width="wrap_content"
@@ -124,18 +162,19 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/utama"
-                    android:layout_margin="10dp"
+                    android:layout_marginTop="8dp"
+                    android:textSize="17sp"
+                    android:textColor="#7E7C7A"
+                    android:layout_marginLeft="15dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text= "Kuy Beli Kuliner Tradisional"/>
 
                 <androidx.recyclerview.widget.RecyclerView
+                    android:layout_marginTop="10dp"
                     android:id="@+id/rv_kulinerbaru"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="341dp" />
 
             </LinearLayout>
 

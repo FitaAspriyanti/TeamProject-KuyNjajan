@@ -32,10 +32,6 @@ class RegisterToko : AppCompatActivity() {
             et_alamat_toko.error = "Alamat Toko wajib diisi"
             et_alamat_toko.requestFocus()
             return}
-//        }else if (et_foto.text.isEmpty()) {
-//            et_foto.error = "Alamat Toko wajib diisi"
-//            et_foto.requestFocus()
-//            return}
         else if (et_notelp.text.isEmpty()) {
             et_notelp.error = "Nomor Telepon wajib diisi"
             et_notelp.requestFocus()

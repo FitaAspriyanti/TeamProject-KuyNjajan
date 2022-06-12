@@ -10,12 +10,10 @@ import android.widget.Button
 import android.widget.RelativeLayout
 import android.widget.TextView
 import com.example.kuy_njajan.R
-import com.example.kuy_njajan.activity.shared.*
 import com.example.kuy_njajan.activity.ui.Login_Activity
-import com.example.kuy_njajan.activity.ui.RegisterToko
 import com.example.kuy_njajan.activity.ui.WelcomeSellerActivity
-import com.example.kuy_njajan.data.helper.Constant
-import com.example.kuy_njajan.data.helper.PrefHelper
+import com.example.kuy_njajan.activity.shared.helper.Constant
+import com.example.kuy_njajan.activity.shared.helper.PrefHelper
 
 class ProfilFragment : Fragment() {
 
