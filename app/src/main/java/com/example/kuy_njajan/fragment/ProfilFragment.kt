@@ -14,6 +14,8 @@ import com.example.kuy_njajan.activity.ui.Login_Activity
 import com.example.kuy_njajan.activity.ui.WelcomeSellerActivity
 import com.example.kuy_njajan.activity.shared.helper.Constant
 import com.example.kuy_njajan.activity.shared.helper.PrefHelper
+import com.example.kuy_njajan.activity.ui.AboutActivity
+import com.example.kuy_njajan.activity.ui.HelpActivity
 
 class ProfilFragment : Fragment() {
 
@@ -22,6 +24,8 @@ class ProfilFragment : Fragment() {
     lateinit var btnLogout: Button
     lateinit var btnMulaiJual: RelativeLayout
     lateinit var btnRiwayat : RelativeLayout
+    lateinit var btnTentang : RelativeLayout
+    lateinit var btnHelp : RelativeLayout
     lateinit var  textUser : TextView
     lateinit var  textNama : TextView
     lateinit var  textTelp :TextView
@@ -48,6 +52,14 @@ class ProfilFragment : Fragment() {
         btnRiwayat.setOnClickListener{
 //            startActivity(Intent(requireActivity(), RegisterToko::class.java))
         }
+
+        btnTentang.setOnClickListener {
+            startActivity(Intent(requireActivity(), AboutActivity::class.java))
+        }
+
+        btnHelp.setOnClickListener {
+            startActivity(Intent(requireActivity(), HelpActivity::class.java))
+        }
         return view
     }
 
@@ -59,6 +71,8 @@ class ProfilFragment : Fragment() {
         btnLogout = view.findViewById(R.id.btn_logout)
         btnMulaiJual = view.findViewById(R.id.btn_mulaijual)
         btnRiwayat = view.findViewById(R.id.btn_riwayat)
+        btnTentang = view.findViewById(R.id.btn_tentang)
+        btnHelp = view.findViewById(R.id.btn_help)
         textUser = view.findViewById(R.id.text_user)
         textNama= view.findViewById(R.id.text_nama)
         textTelp = view.findViewById(R.id.text_tlp)

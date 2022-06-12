@@ -30,4 +30,6 @@
     <string name="kamera">Kamera</string>
     <string name="ambil_foto">Ambil Foto</string>
     <string name="flip_kamera">Flip Kamera</string>
+    <string name="kuynjajan">KuyNjajan</string>
+    <string name="version_1_0">Version 1.0</string>
 </resources>

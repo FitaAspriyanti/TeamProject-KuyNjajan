@@ -41,16 +41,16 @@ interface ApiInterface {
         @Field("iduser") iduser: String
     ): Call<ResponseModel>
 
-    @FormUrlEncoded
-    //@Multipart
+    @Multipart
+    //@FormUrlEncoded
     @POST("dagangan")
     fun uploadProduk(
-        //@Part file: MultipartBody.Part,
-        @Field("nama") nama: String,
-        @Field("jenis") jenis: String,
-        @Field("asal") asal: String,
-        @Field("harga") harga: String,
-        @Field("deskripsi") deskripsi: String,
-        //@Field("foto_dagangan") foto_dagangan: String
+        @Part("nama") nama: String,
+        @Part("jenis") jenis: String,
+        @Part("asal") asal: String,
+        @Part("harga") harga: String,
+        @Part("deskripsi") deskripsi: String,
+        @Part foto_dagangan: MultipartBody.Part,
+        @Part("idtoko") idtoko: String
     ): Call<ResponseModel>
 }

@@ -5,6 +5,8 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.kuy_njajan.R
+import com.example.kuy_njajan.activity.shared.helper.Constant
+import com.example.kuy_njajan.activity.shared.helper.PrefHelper
 import com.example.kuy_njajan.data.ApiConfig
 import com.example.kuy_njajan.model.ResponseModel
 import kotlinx.android.synthetic.main.activity_register.*
@@ -15,10 +17,13 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class RegisterToko : AppCompatActivity() {
+
+    //lateinit var prefHelper: PrefHelper
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         setContentView(R.layout.activity_shop_register)
+
         btn_simpan_toko.setOnClickListener{
             addNewStore()
         }
@@ -45,11 +50,15 @@ class RegisterToko : AppCompatActivity() {
             et_id.requestFocus()
             return
         }
+
+        /*prefHelper = PrefHelper(this)
+        val idUser = prefHelper.getString( Constant.pref_iduser )*/
+
         ApiConfig.instanceRetrofit.daftarToko(
             et_nama_toko.text.toString(),
-            et_alamat_toko.text.toString(),et_notelp.text.toString(), et_id.text.toString()
+            et_alamat_toko.text.toString(),et_notelp.text.toString(), et_id.text.toString()//, idUser.toString()
         ).enqueue(
-            object : retrofit2.Callback<ResponseModel> {
+            object : Callback<ResponseModel> {
                 override fun onResponse(
                     call: Call<ResponseModel>,
                     response: Response<ResponseModel>

@@ -1,7 +1,9 @@
 package com.example.kuy_njajan.activity.ui
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.kuy_njajan.MainActivity
@@ -20,10 +22,32 @@ import retrofit2.Response
 
 class Register_Activity : AppCompatActivity() {
 
+    private lateinit var ivFacebook: ImageView
+    private lateinit var ivGoogle: ImageView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         setContentView(R.layout.activity_register)
+
+        ivGoogle = findViewById(R.id.iv_google)
+
+        ivGoogle.setOnClickListener {
+            val url = "https://accounts.google.com/signin/v2/identifier?flowName=GlifWebSignIn&flowEntry=AddSession"
+            val googleIntent = Intent(Intent.ACTION_VIEW)
+            googleIntent.setData(Uri.parse(url))
+            startActivity(googleIntent)
+        }
+
+        ivFacebook = findViewById(R.id.iv_facebook)
+
+        ivFacebook.setOnClickListener {
+            val url = "https://www.facebook.com/"
+            val facebookIntent = Intent(Intent.ACTION_VIEW)
+            facebookIntent.setData(Uri.parse(url))
+            startActivity(facebookIntent)
+        }
+
         txt_login.setOnClickListener {
             startActivity(Intent(this, Login_Activity::class.java))
         }

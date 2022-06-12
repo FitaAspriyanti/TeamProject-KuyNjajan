@@ -20,7 +20,7 @@
         android:layout_width="119dp"
         android:layout_height="112dp"
         android:layout_marginStart="144dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="2dp"
         android:src="@drawable/tambah_foto"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/include" />
@@ -30,7 +30,6 @@
         android:layout_width="100dp"
         android:layout_height="48dp"
         android:layout_marginStart="55dp"
-        android:layout_marginTop="20dp"
         android:text="@string/galeri"
         android:textStyle="bold"
         android:textSize="18sp"
@@ -43,7 +42,6 @@
         android:id="@+id/btn_kamera"
         android:layout_width="100dp"
         android:layout_height="48dp"
-        android:layout_marginTop="20dp"
         android:layout_marginEnd="55dp"
         android:text="@string/kamera"
         android:textStyle="bold"
@@ -60,7 +58,7 @@
         android:background="#c0c0c0"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/include"
-        app:layout_constraintVertical_bias="0.301"
+        app:layout_constraintVertical_bias="0.242"
         tools:layout_editor_absoluteX="0dp" />
 
     <androidx.cardview.widget.CardView
@@ -145,7 +143,7 @@
         android:id="@+id/et_harga"
         android:layout_width="370dp"
         android:layout_height="wrap_content"
-        android:hint="Masukkan Asal Daerah"
+        android:hint="Masukkan Harga Produk"
         android:inputType="text"
         app:layout_constraintStart_toStartOf="@+id/tv_nama_produk"
         app:layout_constraintTop_toBottomOf="@+id/tv_harga" />
@@ -164,18 +162,36 @@
         android:id="@+id/et_deskripsi_produk"
         android:layout_width="370dp"
         android:layout_height="50dp"
-        android:layout_marginTop="3dp"
         android:background="@drawable/text_border"
         android:hint="Masukkan Deskripsi Produk"
         android:inputType="text"
         app:layout_constraintStart_toStartOf="@+id/tv_nama_produk"
         app:layout_constraintTop_toBottomOf="@+id/tv_deskripsi_produk" />
 
+    <TextView
+        android:id="@+id/tv_id_produk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:text="id produk"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_deskripsi_produk" />
+
+    <EditText
+        android:id="@+id/et_id_produk"
+        android:layout_width="370dp"
+        android:layout_height="wrap_content"
+        android:hint="Masukkan salah satu angka dari 1-10"
+        android:inputType="number"
+        app:layout_constraintStart_toStartOf="@+id/tv_nama_produk"
+        app:layout_constraintTop_toBottomOf="@+id/tv_id_produk" />
+
     <Button
         android:id="@+id/btn_upload_produk"
         android:layout_width="194dp"
         android:layout_height="48dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="5dp"
         android:text="Upload"
         android:textAppearance="@style/TextAppearance.AppCompat"
         android:textSize="18sp"

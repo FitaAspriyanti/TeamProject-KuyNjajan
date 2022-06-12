@@ -9,5 +9,6 @@ class Constant {
         val pref_nama = "pref_nama"
         val pref_notelp = "pref_notelp"
         val pref_foto = "pref_foto"
+
     } //peruabahan 1
 }

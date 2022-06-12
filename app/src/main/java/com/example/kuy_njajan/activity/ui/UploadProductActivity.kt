@@ -89,29 +89,36 @@ class UploadProductActivity : AppCompatActivity() {
         }
     }
 
-    private fun uploadProduk() {
+    fun uploadProduk() {
         if (getFile != null) {
             val file = reduceImageSize(getFile as File)
 
             val nama: String = binding.etNamaProduk.text.toString()
             val jenis: String = binding.etJenis.text.toString()
-            val asalDaerah: String = binding.etAsalDaerah.text.toString()
+            val asal: String = binding.etAsalDaerah.text.toString()
             val harga: String = binding.etHarga.text.toString()
             val deskripsi: String = binding.etDeskripsiProduk.text.toString()
+            //val fotoDagangan: String = binding.ivTambahFoto
             val requestImageFile = file.asRequestBody("image/jpeg".toMediaTypeOrNull())
-            /*val fotoDagangan: String = String.createFormData(
-                "photo",
+            val imageMultipart: MultipartBody.Part = MultipartBody.Part.createFormData(
+                "foto_dagangan",
                 file.name,
                 requestImageFile
-            )*/
+            )
+            val idtoko: String = binding.etIdProduk.text.toString()
 
-            val service = ApiConfig.instanceRetrofit.uploadProduk(nama, jenis, asalDaerah, harga, deskripsi/*, fotoDagangan*/)
-            service.enqueue(object : Callback<ResponseModel> {
+            ApiConfig.instanceRetrofit.uploadProduk(nama, jenis, asal, harga, deskripsi, imageMultipart, idtoko)
+            .enqueue(object : Callback<ResponseModel> {
                 override fun onResponse(
                     call: Call<ResponseModel>,
                     response: Response<ResponseModel>
                 ) {
-                    goToBeranda()
+                    val response = response.body()
+                    if (response?.success == true) {
+                        goToBeranda()
+                        finish()
+                        Toast.makeText(this@UploadProductActivity, "Upload Berhasil", Toast.LENGTH_SHORT).show()
+                    }
                 }
 
                 override fun onFailure(call: Call<ResponseModel>, t: Throwable) {
@@ -119,7 +126,7 @@ class UploadProductActivity : AppCompatActivity() {
                 }
             })
         } else {
-            Toast.makeText(this@UploadProductActivity, "Pilih atau ambil foto terlebih dahulu", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this@UploadProductActivity, "Lengkapi Data Terlebih Dahulu", Toast.LENGTH_SHORT).show()
 
         if (binding.etNamaProduk.text.isEmpty()) {
             binding.etNamaProduk.error = "Nama Produk wajib diisi"
@@ -141,35 +148,11 @@ class UploadProductActivity : AppCompatActivity() {
             binding.etDeskripsiProduk.error = "Deskripsi wajib diisi"
             binding.etDeskripsiProduk.requestFocus()
             return
+        } else if (binding.etIdProduk.text.isEmpty()) {
+            binding.etIdProduk.error = "ID Produk wajib diisi"
+            binding.etIdProduk.requestFocus()
+            return
         }
-
-        /*ApiConfig.instanceRetrofit.uploadProduk(
-            binding.etNamaProduk.text.toString(),
-            binding.etJenis.text.toString(),
-            binding.etAsalDaerah.text.toString(),
-            binding.etHarga.text.toString(),
-            binding.etDeskripsiProduk.text.toString()
-        ).enqueue(
-            object : Callback<ResponseModel> {
-                override fun onResponse(
-                    call: Call<ResponseModel>,
-                    response: Response<ResponseModel>
-                ) {
-                    val response = response.body()
-                    if (response?.success == true) {
-                        val intent = Intent(this@UploadProductActivity, BerandaFragment::class.java)
-                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
-                        startActivity(intent)
-                        finish()
-                        Toast.makeText(this@UploadProductActivity, "Upload Produk Berhasil - " + response.message, Toast.LENGTH_SHORT).show()
-
-                    }
-                }
-
-                override fun onFailure(call: Call<ResponseModel>, t: Throwable) {
-                    Toast.makeText(this@UploadProductActivity, "Upload Produk Gagal - " + t.message, Toast.LENGTH_SHORT).show()
-                }*/
-
             }
     }
 
@@ -183,20 +166,6 @@ class UploadProductActivity : AppCompatActivity() {
                 .commit()
         }
     }
-
-    /*private fun uploadImage() {
-        if (getFile != null) {
-            val file = reduceImageSize(getFile as File)
-
-            val namaProduk: String = binding.etNamaProduk.text.toString()
-            val jenis: String = binding.etJenis.text.toString()
-            val asalDaerah: String = binding.etAsalDaerah.text.toString()
-            val harga: String = binding.etHarga.text.toString()
-            val deskripsiProduk: String = binding.etDeskripsiProduk.text.toString()
-
-            val requestImageFile = file.asRequestBody("image/jpeg".toMediaTypeOrNull())
-        }
-    }*/
 
     private fun startGallery() {
         val intent = Intent()
