@@ -25,5 +25,9 @@ git clone https://github.com/FitaAspriyanti/TeamProject-KuyNjajan.git
 ## Build Configuration
 This project was build on JDK 11
 
+## Version History
+* version 1.0 
+     * Initial commit
+
 ## Contact
 Please contact us at help.kuynjajan@gmail.com
