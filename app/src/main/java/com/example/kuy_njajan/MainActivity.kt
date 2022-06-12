@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() {
     }
     val message : BroadcastReceiver = object : BroadcastReceiver(){
         override fun onReceive(p0: Context?, p1: Intent?) {
-           fordetail = true
+            fordetail = true
         }
 
     }
@@ -69,7 +69,7 @@ class MainActivity : AppCompatActivity() {
                     callFargment(1, fragmentWistlist)
                 }  R.id.navigation_keranjang -> {
                 callFargment(2, fragmentTroli)
-                }
+            }
                 R.id.navigation_profil -> {
                     callFargment(3, fragmentProfil)
                 }

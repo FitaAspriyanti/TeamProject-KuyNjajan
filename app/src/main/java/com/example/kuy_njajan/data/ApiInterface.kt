@@ -1,13 +1,12 @@
 package com.example.kuy_njajan.data
 
+import android.system.StructTimespec
 import com.example.kuy_njajan.model.ResponUser
 import com.example.kuy_njajan.model.ResponseModel
+import okhttp3.MultipartBody
 import retrofit2.Call
-import retrofit2.http.Field
-import retrofit2.http.POST
 import okhttp3.ResponseBody
-import retrofit2.http.FormUrlEncoded
-import retrofit2.http.GET
+import retrofit2.http.*
 
 interface ApiInterface {
 
@@ -40,5 +39,18 @@ interface ApiInterface {
 //        @Field("foto") foto: String,
         @Field("notelp") notelp: String,
         @Field("iduser") iduser: String
+    ): Call<ResponseModel>
+
+    @FormUrlEncoded
+    //@Multipart
+    @POST("dagangan")
+    fun uploadProduk(
+        //@Part file: MultipartBody.Part,
+        @Field("nama") nama: String,
+        @Field("jenis") jenis: String,
+        @Field("asal") asal: String,
+        @Field("harga") harga: String,
+        @Field("deskripsi") deskripsi: String,
+        //@Field("foto_dagangan") foto_dagangan: String
     ): Call<ResponseModel>
 }

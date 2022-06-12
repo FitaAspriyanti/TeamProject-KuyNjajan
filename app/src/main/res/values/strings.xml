@@ -26,4 +26,8 @@
     <string name="no_telepon">No. Telepon</string>
     <string name="masukkan_nomor_telepon_kamu_disini">Masukkan nomor telepon kamu disini</string>
     <string name="simpan">Daftar Toko</string>
+    <string name="galeri">Galeri</string>
+    <string name="kamera">Kamera</string>
+    <string name="ambil_foto">Ambil Foto</string>
+    <string name="flip_kamera">Flip Kamera</string>
 </resources>

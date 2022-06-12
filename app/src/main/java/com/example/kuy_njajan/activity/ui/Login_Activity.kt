@@ -8,10 +8,9 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.kuy_njajan.MainActivity
 import com.example.kuy_njajan.R
-import com.example.kuy_njajan.activity.shared.SharedPreferencesLogin
 import com.example.kuy_njajan.data.ApiConfig
-import com.example.kuy_njajan.data.helper.Constant
-import com.example.kuy_njajan.data.helper.PrefHelper
+import com.example.kuy_njajan.activity.shared.helper.Constant
+import com.example.kuy_njajan.activity.shared.helper.PrefHelper
 import com.example.kuy_njajan.model.*
 import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.activity_login.password
@@ -24,9 +23,9 @@ class Login_Activity : AppCompatActivity(){
 
 //        lateinit var s: SharedPreferencesLogin
 
-        // perubahan 5
-        private val TAG:String = "LoginActivity"
-        lateinit var prefHelper:PrefHelper
+    // perubahan 5
+    private val TAG:String = "LoginActivity"
+    lateinit var prefHelper:PrefHelper
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)

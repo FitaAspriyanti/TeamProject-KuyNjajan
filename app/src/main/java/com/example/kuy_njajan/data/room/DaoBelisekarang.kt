@@ -20,7 +20,7 @@ interface DaoBelisekarang {
     fun getAll(): List<Dagangan>
 
     @Query("SELECT * FROM belisekarang WHERE id = :id LIMIT 1")
-    fun getDagangan(id: Int): Dagangan
+    fun getDagangan(id: String): Dagangan
 
     @Query("DELETE FROM belisekarang")
     fun deleteAll(): Int

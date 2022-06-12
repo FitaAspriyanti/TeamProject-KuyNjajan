@@ -56,7 +56,7 @@ class RegisterToko : AppCompatActivity() {
                 ) {
                     val response = response.body()
                     if (response?.success == true) {
-                        val intent = Intent(this@RegisterToko, AddNewProductActivity::class.java)
+                        val intent = Intent(this@RegisterToko, UploadProductActivity::class.java)
                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
                         startActivity(intent)
                         finish()
