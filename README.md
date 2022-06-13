@@ -22,7 +22,7 @@ git clone https://github.com/FitaAspriyanti/TeamProject-KuyNjajan.git
 
 ## Usage
 ![Screenshot 2022-06-13 102746](https://user-images.githubusercontent.com/55282999/173274264-34e15095-6cbb-49e8-911f-500508fa55f7.png)
-)
+
 
 https://youtu.be/e3y80AuFOXo
 
