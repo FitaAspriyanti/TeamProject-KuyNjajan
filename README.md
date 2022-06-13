@@ -21,7 +21,7 @@ git clone https://github.com/FitaAspriyanti/TeamProject-KuyNjajan.git
 ```
 
 ## Usage
-[![Watch the video]](https://youtu.be/e3y80AuFOXo)
+[![Watch the video](https://img.youtube.com/vi/T-D1KVIuvjA/maxresdefault.jpg)](https://youtu.be/e3y80AuFOXo)
 
 ## Build Configuration
 This project was build on JDK 11
