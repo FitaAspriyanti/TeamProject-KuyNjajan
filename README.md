@@ -21,6 +21,7 @@ git clone https://github.com/FitaAspriyanti/TeamProject-KuyNjajan.git
 ```
 
 ## Usage
+https://youtu.be/e3y80AuFOXo
 
 ## Build Configuration
 This project was build on JDK 11
